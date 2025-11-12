@@ -1,44 +1,39 @@
-const quizFilter = [
-  {
-    id: 0,
-    label: "Biologia",
-  },
-  { id: 1, label: "TI" },
-];
+let qs = [];
 
-const url = new URL(window.location.href);
-const t = url.searchParams.get("t");
-
-if (t) {
-  document.querySelector(".quiz-filter").innerHTML = quizFilter.find(
-    (qf) => qf.id == t
-  ).label;
+if (!localStorage.getItem("cats")) {
+  window.location.href = "index.html";
 } else {
-  document.querySelector(".quiz-filter").innerHTML = "";
+  const cats = localStorage.getItem("cats").split(",");
+  qs = questions.filter((q) => cats.includes(String(q.id)));
+  for (const c of cats) {
+    for (const q of questions) {
+      if (q.filter.includes(filters[parseInt(c) + 1].label)) {
+        qs.push(q);
+      }
+    }
+  }
 }
 
 // Init
 let qIndex = 0;
 
 correct = 0;
-q = 1;
+q = 0;
 
 init();
 
 async function init() {
-  const exam = questions[qIndex].exam
-    ? `<b>[${questions[qIndex].exam}] </b>`
-    : "";
+  const exam = qs[qIndex].exam ? `<b>[${qs[qIndex].exam}] </b>` : "";
   document.querySelector(".question").innerHTML =
-    exam + questions[qIndex].label;
+    exam + qs[qIndex].label + `<img src="${qs[qIndex].img}" />`;
 
   document.querySelector(".points").innerHTML = `Q. #${qIndex + 1} / ${
-    questions.length
+    qs.length
   } (${correct} correctas)`;
 
   let buttons = "";
 
-  questions[qIndex].answers.forEach(
+  qs[qIndex].answers.forEach(
     (a) => (buttons += `<button id='btn-${a}' value='${a}'>${a}</butto>`)
   );
 
@@ -46,12 +41,12 @@ async function init() {
 
   document.querySelectorAll(".answers button").forEach((button) => {
     button.addEventListener("click", (e) => {
-      if (e.target.value === questions[qIndex].answer) {
+      if (e.target.value === qs[qIndex].answer) {
         correct++;
         document.getElementById(`btn-${e.target.value}`).style.backgroundColor =
           "#2bccb1";
 
-        qIndex = (qIndex + 1) % questions.length;
+        qIndex = (qIndex + 1) % qs.length;
         if (qIndex === 0) {
           correct = 0;
           alert("Wau!");
@@ -60,9 +55,9 @@ async function init() {
         document.getElementById(`btn-${e.target.value}`).style.backgroundColor =
           "red";
         document.getElementById(
-          `btn-${questions[qIndex].answer}`
+          `btn-${qs[qIndex].answer}`
         ).style.backgroundColor = "#2bccb1";
-        document.getElementById(`btn-${questions[qIndex].answer}`).style.color =
+        document.getElementById(`btn-${qs[qIndex].answer}`).style.color =
           "#fff";
 
         correct = 0;
@@ -74,7 +69,7 @@ async function init() {
       setTimeout(() => {
         init();
         document.querySelector(".points").innerHTML = `Q. #${qIndex + 1} / ${
-          questions.length
+          qs.length
         } (${correct} correctas)`;
       }, 3000);
     });
