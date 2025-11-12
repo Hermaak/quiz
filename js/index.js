@@ -25,7 +25,7 @@ init();
 async function init() {
   const exam = qs[qIndex].exam ? `<b>[${qs[qIndex].exam}] </b>` : "";
   document.querySelector(".question").innerHTML =
-    exam + qs[qIndex].label + `<img src="${qs[qIndex].img}" />`;
+    `<span>${exam} ${qs[qIndex].label}</span>` + `<img src="${qs[qIndex].img}" />`;
 
   document.querySelector(".points").innerHTML = `<span>Q. #${qIndex + 1} / ${
     qs.length
@@ -68,9 +68,9 @@ async function init() {
 
       setTimeout(() => {
         init();
-        document.querySelector(".points").innerHTML = `Q. #${qIndex + 1} / ${
+        document.querySelector(".points").innerHTML = `<span>Q. #${qIndex + 1} / ${
           qs.length
-        } (${correct} correctas)`;
+        } (${correct} correctas)</span><a href='https://hermaak.github.io/quiz'><i class='la la-arrow-left'></i> Voltar</a>`;
       }, 3000);
     });
   });
