@@ -27,9 +27,9 @@ async function init() {
   document.querySelector(".question").innerHTML =
     exam + qs[qIndex].label + `<img src="${qs[qIndex].img}" />`;
 
-  document.querySelector(".points").innerHTML = `Q. #${qIndex + 1} / ${
+  document.querySelector(".points").innerHTML = `<span>Q. #${qIndex + 1} / ${
     qs.length
-  } (${correct} correctas)`;
+  } (${correct} correctas)</span><a href='https://hermaak.github.io/quiz'><i class='la la-arrow-left'></i> Voltar</a>`;
 
   let buttons = "";
 

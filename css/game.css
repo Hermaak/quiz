@@ -8,6 +8,10 @@ body {
   margin: auto;
 }
 
+.points {
+  display: flex;justify-content: space-between;
+}
+
 .question {
   background-color: #fff;
   padding: 50px;

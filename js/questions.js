@@ -111,6 +111,97 @@ const questions = [
     exam: "Teste 2",
     img: "",
   },
+  {
+    id: 10,
+    label:
+      "Na condução nocturna, os hábitos do condutor aumentam ou não a fadiga?",
+    answers: [
+      "Factores como alimentação, seu tipo, quantidade e frequência não acentuam a fadiga.",
+      "Sim, factores como alimentação, seu tipo, quantidade e frequência.",
+      "Apenas a ingestão de bebidas alcoólicas acentuam a fadiga.",
+      "Os hábitos do condutor não aumentam a fadiga.",
+    ],
+    answer:
+      "Sim, factores como alimentação, seu tipo, quantidade e frequência.",
+    filter: ["Inatro"],
+    exam: "Teste 2",
+    img: "",
+  },
+  {
+    id: 11,
+    label: "O significado deste sinal é:",
+    answers: [
+      "Zona onde só podem passar três carros de cada vez.",
+      "Zona de estacionamento em fila.",
+      "Congestionamento de tráfego.",
+      "Zona de paragem em fila.",
+    ],
+    answer: "Congestionamento de tráfego.",
+    filter: ["Inatro"],
+    exam: "Teste 2",
+    img: "assets/img/inatro/congestionamento-de-trafego.png",
+  },
 
+  {
+    id: 12,
+    label: "Que indica a marca rodoviária?",
+    answers: [
+      "Linha de paragem obrigatória com stop.",
+      "Linha de paragem obrigatória.",
+      "Linha de cedência de prioridade com símbolo triangular.",
+    ],
+    answer: "Linha de cedência de prioridade com símbolo triangular.",
+    filter: ["Inatro"],
+    exam: "Teste 2",
+    img: "assets/img/inatro/cedencia-de-prioridade.png",
+  },
+  {
+    id: 13,
+    label: "O significado destes sinais é:",
+    answers: [
+      "A - Parque de descanso; B - Parque de estacionamento para veículos do corpo diplomático.",
+      "A - Parque de estacionamento; B - Parque de estacionamento para veículos do corpo diplomático.",
+      "A - Parque de estacionamento; B - Parque de estacionamento para veículos do governo.",
+      "A - Parque de estacionamento; B - Parque de estacionamento para veículos do ministério.",
+    ],
+    answer:
+      "A - Parque de estacionamento; B - Parque de estacionamento para veículos do corpo diplomático.",
+    filter: ["Inatro"],
+    exam: "Teste 2",
+    img: "assets/img/inatro/parque-corpo-diplomatico.png",
+  },
+  {
+    id: 14,
+    label: "O significado deste sinal é:",
+    answers: [
+      "Queda de pedras à direita.",
+      "Queda de pedras à esquerda.",
+      "Estrada com buracos na esquerda.",
+      "Estrada com buracos na direita. ",
+    ],
+    answer:
+      "Queda de pedras à esquerda.",
+    filter: ["Inatro"],
+    exam: "Teste 2",
+    img: "assets/img/inatro/queda-de-pedras.png",
+  },
+   {
+    id: 15,
+    label: "O significado deste sinal é:",
+    answers: [
+      "Prioridade para quem circula à esquerda.",
+      "Prioridade para quem circula à direita.",
+      "Trânsito nos dois sentidos.",
+      "Prioridade temporária para quem circula à direita.",
+    ],
+    answer:
+      "Trânsito nos dois sentidos.",
+    filter: ["Inatro"],
+    exam: "Teste 2",
+    img: "assets/img/inatro/transito-dois-sentidos.png",
+  },
+
+  
+  
   // InatroX
 ];
