@@ -1,7 +1,7 @@
 let qs = [];
 
 if (!localStorage.getItem("cats")) {
-  window.location.href = "index.html";
+  window.location.href = "https://hermaak.github.io/quiz/";
 } else {
   const cats = localStorage.getItem("cats").split(",");
   qs = questions.filter((q) => cats.includes(String(q.id)));
